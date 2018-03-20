@@ -11,7 +11,10 @@ public class CreateReviewFiles {
 	public void createReviewFiles() throws IOException {
 		List<Review> reviews = new ReviewScanner()
 				.findReviewList("https://www.amazon.co.uk/Pandora-Womens-Sterling-Silver-Charm/dp/B00716R4LE/ref=sr_1_13?ie=UTF8&qid=1520182640&sr=8-13");
+
 		for (Review review : reviews) {
+			review = review.setText(ProcessReview.process(review.getText()));
+
 			FileStoreUtils.saveReview("r-", review);
 		}
 	}

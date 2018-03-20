@@ -18,6 +18,10 @@ public class Review {
 		return text;
 	}
 
+	public Review setText(String text) {
+		return new Review(this.score, text);
+	}
+
 	public String toFile() {
 		return String.valueOf(score) + "\r\n " + text + "\r\n ";
 	}
