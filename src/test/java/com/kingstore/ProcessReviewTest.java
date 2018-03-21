@@ -25,4 +25,12 @@ public class ProcessReviewTest {
 		assertTrue(processedEmail.equals("hello! httpaddr what up "));
 	}
 
+	@Test
+	public void porterStemmer() {
+		String stemmedWord = ProcessReview.stem("amenities");
+
+		String stemmedWord2 = ProcessReview.stem("working");
+		assertEquals(stemmedWord, "amen");
+	}
+
 }
